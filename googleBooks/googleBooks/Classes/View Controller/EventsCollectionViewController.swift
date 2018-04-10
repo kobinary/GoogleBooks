@@ -9,31 +9,25 @@
 import UIKit
 
 private let reuseIdentifier = "eventCell"
+private let segueIdentifier  = "eventDetails"
+
 
 class EventsCollectionViewController: UICollectionViewController {
 
     var viewModel : EventsListViewModel!
-    
 
+    
     // MARK: - Setup
 
     override func viewDidLoad() {
         super.viewDidLoad()
+//        self.collectionView?.collectionViewLayout = EventsCollectionViewFlowLayout.layout
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -45,44 +39,25 @@ class EventsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.events.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! EventCollectionViewCell
-    
-        // Configure the cell
-    
+        let viewModelCell : EventViewModel = viewModel.events[indexPath.row]
+        cell.updateWithViewModel(viewModel: viewModelCell)
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    
+    // MARK: Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            let eventCell : EventCollectionViewCell = sender as! EventCollectionViewCell
+            let indexPath : NSIndexPath =  collectionView?.indexPath(for: eventCell)! as! NSIndexPath
+            let viewModelCell = self.viewModel.events[indexPath.row]
+            let detailVC = segue.destination as! EventDetailsViewController
+            detailVC.viewModel = viewModelCell
+        }
     }
-    */
 
 }

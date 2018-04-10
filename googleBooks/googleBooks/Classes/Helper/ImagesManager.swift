@@ -22,10 +22,4 @@ class ImagesManager: NSObject {
         }
     }
     
-    static func setupLogo() -> UIImageView {
-        let logo = UIImage(named: "popsy_title.png")
-        let imageView = UIImageView(image:logo)
-        return imageView
-    }
-    
 }

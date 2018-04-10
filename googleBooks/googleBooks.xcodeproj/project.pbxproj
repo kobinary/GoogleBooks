@@ -20,6 +20,7 @@
 		4C08D644207D184600619DCC /* EventCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08D643207D184600619DCC /* EventCollectionViewCell.swift */; };
 		4C08D647207D1BA100619DCC /* EventsCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08D646207D1BA100619DCC /* EventsCollectionViewFlowLayout.swift */; };
 		4C08D649207D1BE100619DCC /* ImagesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08D648207D1BE100619DCC /* ImagesManager.swift */; };
+		4C08D64B207D263500619DCC /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C08D64A207D263500619DCC /* EventDetailsViewController.swift */; };
 		4CD7708F207CCDEF00E432CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD7708E207CCDEF00E432CB /* AppDelegate.swift */; };
 		4CD77091207CCDEF00E432CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CD77090207CCDEF00E432CB /* ViewController.swift */; };
 		4CD77094207CCDEF00E432CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD77092207CCDEF00E432CB /* Main.storyboard */; };
@@ -66,6 +67,7 @@
 		4C08D643207D184600619DCC /* EventCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCollectionViewCell.swift; sourceTree = "<group>"; };
 		4C08D646207D1BA100619DCC /* EventsCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		4C08D648207D1BE100619DCC /* ImagesManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesManager.swift; sourceTree = "<group>"; };
+		4C08D64A207D263500619DCC /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		4CD7708B207CCDEE00E432CB /* googleBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = googleBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD7708E207CCDEF00E432CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4CD77090207CCDEF00E432CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +173,7 @@
 				4C08D63D207D162900619DCC /* DataManagerViewController.swift */,
 				4C08D641207D178400619DCC /* EventsCollectionViewController.swift */,
 				4C08D643207D184600619DCC /* EventCollectionViewCell.swift */,
+				4C08D64A207D263500619DCC /* EventDetailsViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				4CD77091207CCDEF00E432CB /* ViewController.swift in Sources */,
 				4C08D647207D1BA100619DCC /* EventsCollectionViewFlowLayout.swift in Sources */,
 				4CD7708F207CCDEF00E432CB /* AppDelegate.swift in Sources */,
+				4C08D64B207D263500619DCC /* EventDetailsViewController.swift in Sources */,
 				4C08D62D207CD0DE00619DCC /* DataParser.swift in Sources */,
 				4C08D638207D06AB00619DCC /* PlistReader.swift in Sources */,
 				4C08D62E207CD0DE00619DCC /* APINetworkRequest.swift in Sources */,
