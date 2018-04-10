@@ -13,20 +13,18 @@ let googleBooksSearch = PlistReader.getAPIEnpoint(key:"googlebooks-search")
 
 class APINetworkRequest: NSObject {
     
-    func getListings(completion: @escaping (Array<ListingViewModel>) -> Void)  {
+    func getEvents(completion: @escaping (EventsListViewModel?) -> Void)  {
         
         let getEvents = PlistReader.getAPIEnpoint(key:"events")
-        let searchEventsURL = popsyDev + getListings
+        let searchEventsURL = googleBooksSearch + getEvents
         
         Alamofire.request(searchEventsURL).responseJSON {
             (response) in
-            if let responseJSON = response.result.value as? [String: Any] {
-                let results = responseJSON["results"] as? NSArray
-                
-                let events = DataParser().getListOfContet(array: results!)
+            if let responseJSON = response.result.value as? [String: Any] {                
+                let events = DataParser().getListOfEvents(dictionary: responseJSON)
                 completion(events)
             } else {
-                completion([])
+                completion(nil)
             }
         }
     }

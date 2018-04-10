@@ -10,62 +10,52 @@ import UIKit
 
 class DataParser: NSObject {
 
-    func getListOfContet(array : NSArray) -> Array<ListingViewModel> {
-        var listingsArray : Array<ListingViewModel> = []
+    func getListOfEvents(dictionary : [String : Any]) -> EventsListViewModel {
+        let eventsArray = EventsListViewModel()
+        eventsArray.events = []
         
-        for listing in array {
-            listingsArray.append(self.getListing(content: listing as! NSDictionary))
+        let events = dictionary["items"] as? NSArray
+        for event in events! {
+            let eventVM = self.getEventViewModel(content: event as! NSDictionary)
+            eventsArray.events.append(eventVM)
         }
-        return listingsArray
+        return eventsArray
     }
 
-    func getListing(content : NSDictionary) -> ListingViewModel {
+    func getEventViewModel(content : NSDictionary) -> EventViewModel {
+                
         let id = content["id"] as! String
-        let pictures = content["pictures"] as! NSArray
-        let picturesDic = pictures[0] as! NSDictionary
-        let path = picturesDic["path"] as! String
+        //        let link = content["selfLink"] as! String
+
+        let volumeInfo = content["volumeInfo"] as! NSDictionary
+        let title = volumeInfo["title"] as! String
+        let subtitle = nullToEmptyString(value: volumeInfo["subtitle"] as AnyObject)
+        let authors = nullToEmptyArray(value: volumeInfo["authors"] as AnyObject)
+        let publishedDate = volumeInfo["publishedDate"] as! String
+        let bookDescription = nullToEmptyString(value: volumeInfo["description"] as AnyObject)
+       
+        let imageLinks = volumeInfo["imageLinks"] as! NSDictionary
+        let smallThumbnail = imageLinks["smallThumbnail"] as! String
+        let thumbnail = imageLinks["thumbnail"] as! String
+
+        let event = Event(id: id, title: title, subtitle: subtitle!, thumbnail: thumbnail, smallThumbnail: smallThumbnail, authors:authors!, publishedDate: publishedDate, bookDescription: bookDescription!)
         
-        let listing = Listing.init(id: id,
-                                   imagePath: path)
-        
-        return ListingViewModel.init(withListing: listing)
+        return EventViewModel(withEvent: event)
     }
     
-    func getListingDetail(content : NSDictionary) -> ListingViewModel {
-        let id = content["id"] as! String
-        let title = content["title"] as! String
-        let desc = content["description"] as! String
-        let date = content["updated_at"] as! Double
-        
-        let coordinates = content["coordinates"] as! NSDictionary
-        let city = coordinates["city"] as! String
-        let latitude = coordinates["latitude"] as! Double
-        let longitude = coordinates["longitude"] as! Double
-        
-        let pictures = content["pictures"] as! NSArray
-        let picturesDic = pictures[0] as! NSDictionary
-        let path = picturesDic["path"] as! String
-        let priceDic = content["price"] as! NSDictionary
-        let price = priceDic["amount"] as! NSNumber
-        let currency = priceDic["currency"] as! String
-
-        let views = content["views"] as! NSNumber
-        let favourites = content["favorited_by"] as! NSArray
-        
-        let listing = Listing.init(id: id,
-                                   title: title,
-                                   info: desc,
-                                   imagePath: path,
-                                   price: price,
-                                   currency: currency,
-                                   city: city,
-                                   latitude: latitude,
-                                   longitude: longitude,
-                                   views: views,
-                                   favourites: favourites,
-                                   date: date)
-        
-        return ListingViewModel.init(withDetails: listing)
+    func nullToEmptyString(value : AnyObject?) -> String? {
+        if value is NSNull {
+            return ""
+        } else {
+            return (value as! String)
+        }
     }
-
+    
+    func nullToEmptyArray(value : AnyObject?) -> Array<String>? {
+        if value is NSNull {
+            return []
+        } else {
+            return (value as!  Array<String>)
+        }
+    }
 }

@@ -10,12 +10,6 @@ import UIKit
 
 class Event: NSObject {
     
-    public enum State: String {
-        case uploaded
-        case not_uploaded
-        case updated
-    }
-    
     var id: String!
     var link: String!
     var title: String!
@@ -25,23 +19,18 @@ class Event: NSObject {
     var thumbnail: String!
     var publishedDate: String!
     var bookDescription: String!
-    // Add more variables
     
     override init() {
         super.init()
     }
     
-    init(id: String, title: String, authors: Array<String>, smallThumbnail: String) {
+    init(id: String, title: String, subtitle: String, thumbnail: String, smallThumbnail: String, authors: Array<String>, publishedDate: String, bookDescription: String) {
         self.id = id
         self.title = title
-        self.authors = authors
-        self.smallThumbnail = smallThumbnail
-    }
-    
-    init(id: String, title: String, thumbnail: String, publishedDate: String, bookDescription: String) {
-        self.id = id
-        self.title = title
+        self.subtitle = subtitle
         self.thumbnail = thumbnail
+        self.smallThumbnail = smallThumbnail
+        self.authors = authors
         self.publishedDate = publishedDate
         self.bookDescription = bookDescription
     }
