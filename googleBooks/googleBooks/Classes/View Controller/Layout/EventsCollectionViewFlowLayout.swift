@@ -13,8 +13,9 @@ class EventsCollectionViewFlowLayout: UICollectionViewFlowLayout {
     static var layout: UICollectionViewLayout = {
         let flow = EventsCollectionViewFlowLayout()
         flow.itemSize = cellSize()
-        flow.minimumInteritemSpacing = 3
-        flow.minimumLineSpacing = 3
+        flow.minimumInteritemSpacing = 5
+        flow.minimumLineSpacing = 5
+        flow.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 5)
         flow.scrollDirection = .vertical
         return flow
     }()
@@ -22,17 +23,17 @@ class EventsCollectionViewFlowLayout: UICollectionViewFlowLayout {
     static func cellSize() -> CGSize {
         switch UIScreen.main.nativeBounds.height {
         case 1920.0, 2208.0: // Plus
-            return CGSize(width: 133,
-                          height: 133)
+            return CGSize(width: 195,
+                          height: 215)
         case 1136.0: // iPhone SE
-            return CGSize(width: 103,
-                          height: 103)
+            return CGSize(width: 195,
+                          height: 215)
         case 1334.0: // iPhone 7, 8
-            return CGSize(width: 123,
-                          height: 123)
+            return CGSize(width: 195,
+                          height: 215)
         default:
-            return CGSize(width: 121,
-                          height: 121)
+            return CGSize(width: 195,
+                          height: 215)
         }
     }
 }

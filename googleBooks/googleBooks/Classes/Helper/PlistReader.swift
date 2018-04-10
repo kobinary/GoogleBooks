@@ -1,8 +1,8 @@
 //
 //  PlistReader.swift
-//  popsy
+//  googleBooks
 //
-//  Created by Maria Ortega on 28/03/2018.
+//  Created by Maria Ortega on 10/04/2018.
 //  Copyright © 2018 Maria Ortega. All rights reserved.
 //
 

@@ -1,6 +1,6 @@
 //
 //  DataParser.swift
-//  popsy
+//  googleBooks
 //
 //  Created by Maria Ortega on 10/04/2018.
 //  Copyright © 2018 Maria Ortega. All rights reserved.
@@ -25,8 +25,6 @@ class DataParser: NSObject {
     func getEventViewModel(content : NSDictionary) -> EventViewModel {
                 
         let id = content["id"] as! String
-        //        let link = content["selfLink"] as! String
-
         let volumeInfo = content["volumeInfo"] as! NSDictionary
         let title = volumeInfo["title"] as! String
         let subtitle = nullToEmptyString(value: volumeInfo["subtitle"] as AnyObject)

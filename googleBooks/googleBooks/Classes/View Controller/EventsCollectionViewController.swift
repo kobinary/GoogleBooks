@@ -21,7 +21,7 @@ class EventsCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.collectionView?.collectionViewLayout = EventsCollectionViewFlowLayout.layout
+        self.collectionView?.collectionViewLayout = EventsCollectionViewFlowLayout.layout
     }
 
     override func didReceiveMemoryWarning() {

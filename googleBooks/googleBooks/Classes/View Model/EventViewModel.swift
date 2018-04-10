@@ -30,8 +30,8 @@ class EventViewModel: NSObject {
         self.title = event.title
         self.thumbnail = event.thumbnail
         self.smallThumbnail = event.smallThumbnail
-        self.publishedDate = event.publishedDate
         
+        self.publishedDate = getPublishDate(date: event.publishedDate)
         self.bookDescription = getDescription(text: event.bookDescription)
         self.authors = getAuthorsNames(array: event.authors)
     }
@@ -53,6 +53,10 @@ class EventViewModel: NSObject {
             return "Sin Descripción por el momento."
         }
         return text
+    }
+    
+    func getPublishDate(date: String) -> String {
+        return "[" + date + "]"
     }
 
 }
