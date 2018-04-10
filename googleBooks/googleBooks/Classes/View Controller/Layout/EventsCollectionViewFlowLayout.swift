@@ -26,11 +26,11 @@ class EventsCollectionViewFlowLayout: UICollectionViewFlowLayout {
             return CGSize(width: 195,
                           height: 215)
         case 1136.0: // iPhone SE
-            return CGSize(width: 195,
-                          height: 215)
+            return CGSize(width: 145,
+                          height: 205)
         case 1334.0: // iPhone 7, 8
-            return CGSize(width: 195,
-                          height: 215)
+            return CGSize(width: 175,
+                          height: 205)
         default:
             return CGSize(width: 195,
                           height: 215)

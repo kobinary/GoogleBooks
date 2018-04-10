@@ -52,9 +52,9 @@ class EventsCollectionViewController: UICollectionViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier {
-            let eventCell : EventCollectionViewCell = sender as! EventCollectionViewCell
-            let indexPath : NSIndexPath =  collectionView?.indexPath(for: eventCell)! as! NSIndexPath
-            let viewModelCell = self.viewModel.events[indexPath.row]
+            let eventCell = sender as! EventCollectionViewCell
+            let indexPath = collectionView?.indexPath(for: eventCell)
+            let viewModelCell = self.viewModel.events[(indexPath?.row)!]
             let detailVC = segue.destination as! EventDetailsViewController
             detailVC.viewModel = viewModelCell
         }
