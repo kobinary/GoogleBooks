@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (4.7.0)
+  - Hero (1.1.0)
+  - KRActivityIndicatorView (2.1.1)
+  - KRProgressHUD (3.2.0):
+    - KRActivityIndicatorView (= 2.1.1)
+  - Realm (3.3.0):
+    - Realm/Headers (= 3.3.0)
+  - Realm/Headers (3.3.0)
+  - RealmSwift (3.3.0):
+    - Realm (= 3.3.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Hero
+  - KRProgressHUD
+  - RealmSwift
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Alamofire
+    - Hero
+    - KRActivityIndicatorView
+    - KRProgressHUD
+    - Realm
+    - RealmSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  Hero: ce59e81c79390613d97b43da7179e2c5e1017e04
+  KRActivityIndicatorView: fa5df9f4cf039651ad8b0f9c11c3159d1e19299f
+  KRProgressHUD: b7f305ce615c287d2e3452b0570f466c1ba4a2e2
+  Realm: 7d74ad6c5020432f58fe5e1df90bb6d97b2c7fef
+  RealmSwift: b2fa31a09c22e246026766557405505eeaad2b01
+
+PODFILE CHECKSUM: 97de05789dc413c6361616143f3ff0f06334fb97
+
+COCOAPODS: 1.5.0
