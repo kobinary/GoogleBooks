@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DataManagerViewController" customModule="googleBooks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Google Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6d1-Ut-Wek">
@@ -43,14 +43,14 @@
             <objects>
                 <collectionViewController id="S4T-Kf-T5i" customClass="EventsCollectionViewController" customModule="googleBooks" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" id="nVO-TK-Sow">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.97239457669999996" green="0.9676970184" blue="0.97709213510000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <inset key="scrollIndicatorInsets" minX="7" minY="5" maxX="7" maxY="5"/>
                         <collectionViewLayout key="collectionViewLayout" id="bgg-gJ-bdw" customClass="EventsCollectionViewFlowLayout" customModule="googleBooks" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="eventCell" id="9cc-1K-tku" customClass="EventCollectionViewCell" customModule="googleBooks" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="195" height="215"/>
+                                <rect key="frame" x="90" y="0.0" width="195" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="195" height="215"/>
@@ -60,7 +60,7 @@
                                             <rect key="frame" x="23" y="9" width="150" height="139.66666666666666"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AI9-tX-Aze">
-                                            <rect key="frame" x="12" y="149.33333333333334" width="170" height="41"/>
+                                            <rect key="frame" x="12" y="149.66666666666666" width="170" height="41"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="41" id="PG6-jX-Lhh"/>
                                             </constraints>
@@ -123,14 +123,14 @@
             <objects>
                 <viewController storyboardIdentifier="eventDetails" id="VFw-Z0-xku" customClass="EventDetailsViewController" customModule="googleBooks" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EW7-B4-z5Q">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detailsContainer" translatesAutoresizingMaskIntoConstraints="NO" id="VCH-Hz-Ee8">
-                                <rect key="frame" x="9" y="68" width="396" height="664"/>
+                                <rect key="frame" x="9" y="92" width="357" height="682"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Maw-AV-8D2">
-                                <rect key="frame" x="20" y="84" width="374" height="321"/>
+                                <rect key="frame" x="20" y="108" width="335" height="339"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabledForSubviews" value="YES"/>
                                     <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="fade"/>
@@ -138,7 +138,7 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9s-zl-zQU">
-                                <rect key="frame" x="33" y="415" width="347" height="56"/>
+                                <rect key="frame" x="33" y="457" width="308" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="EOg-zB-C0G"/>
                                 </constraints>
@@ -147,12 +147,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDn-7H-7C5">
-                                <rect key="frame" x="33" y="476" width="347" height="14"/>
+                                <rect key="frame" x="33" y="518" width="308" height="14"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCc-vY-bL3">
-                                <rect key="frame" x="20" y="503" width="374" height="203"/>
+                                <rect key="frame" x="20" y="545" width="335" height="203"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="203" id="1Fv-dN-gXS"/>
@@ -202,7 +202,7 @@
                 <navigationController storyboardIdentifier="loadEvents" automaticallyAdjustsScrollViewInsets="NO" id="1iC-1A-onH" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="L9A-4Q-U8x">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" red="0.0" green="0.01176470588" blue="0.3716490502" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>

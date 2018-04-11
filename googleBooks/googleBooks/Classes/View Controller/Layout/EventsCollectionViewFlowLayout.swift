@@ -32,8 +32,8 @@ class EventsCollectionViewFlowLayout: UICollectionViewFlowLayout {
             return CGSize(width: 175,
                           height: 205)
         default:
-            return CGSize(width: 195,
-                          height: 215)
+            return CGSize(width: 175,
+                          height: 205)
         }
     }
 }
